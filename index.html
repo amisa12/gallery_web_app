@@ -26,28 +26,11 @@
     <div class="logo">
         <a href="index.html">Gall<em>ery</em></a>
     </div>
-    <div class="menu-icon">
-        <span></span>
+
+    <div class="nav-right">
+        <button id="login-btn" class="login-btn">Login</button>
     </div>
 </nav>
-
-<div id="video-container">
-    <div class="video-overlay"></div>
-    <div class="video-content">
-        <div class="inner">
-            <h1>Welcome to <em>Gallery</em></h1>
-            <p>A page that allows you to view and choose images of your interest</p>
-            <p>Homepage image gallery</p>
-            <div class="scroll-icon">
-                <a class="scrollTo" data-scrollTo="portfolio" href="#"><img src="img/scroll-icon.png" alt=""></a>
-            </div>
-        </div>
-    </div>
-    <video autoplay="" loop="" muted>
-        <source src="highway-loop.mp4" type="video/mp4" />
-    </video>
-</div>
-
 
 <div class="grid-portfolio" id="portfolio">
     <div class="container">
@@ -55,12 +38,9 @@
             <div class="col-md-4 col-sm-6">
                 <div class="portfolio-item">
                     <a href="img/big_portfolio_item_4.png" data-lightbox="image-1"><div class="thumb">
-                        <div class="like-btn">
-                            <span class="likebtn-wrapper"></span>
-                            <script>(function(d,e,s){if(d.getElementById("likebtn_wjs"))return;a=d.createElement(e);m=d.getElementsByTagName(e)[0];a.async=1;a.id="likebtn_wjs";a.src=s;m.parentNode.insertBefore(a, m)})(document,"script","//w.likebtn.com/js/w/widget.js");</script>
-                        </div>
                         <div class="hover-effect">
                             <div class="hover-content">
+<!--                                <button id="like-btn" class="like-btn"><img src="img/wishlist.png">Button</button>-->
                                 <h1>Biodiesel <em>squid</em></h1>
                                 <p>Awesome Subtittle Goes Here</p>
                             </div>
@@ -262,37 +242,87 @@
 </div>
 
 
-
-<section class="overlay-menu">
-    <div class="container">
-        <div class="row">
-            <div class="main-menu">
-                <ul>
-                    <li>
-                        <a href="index.html">Home - Full-width</a>
-                    </li>
-                    <li>
-                        <a href="masonry.html">Home - Masonry</a>
-                    </li>
-                    <li>
-                        <a href="grid.html">Home - Small-width</a>
-                    </li>
-                    <li>
-                        <a href="about.html">About Us</a>
-                    </li>
-                    <li>
-                        <a href="blog.html">Blog Entries</a>
-                    </li>
-                    <li>
-                        <a href="single-post.html">Single Post</a>
-                    </li>
-                </ul>
-                <p>We create awesome templates for you</p>
+<div id="login-modal" class="modal">
+    <!-- Modal Content -->
+    <div class="modal-content">
+        <!-- Modal Header -->
+        <div class="modal-header">
+            <h3 class="header-title"><em>Login</em></h3>
+            <div class="close-btn"><img src="img/close_contact.png" alt=""></div>
+        </div>
+        <!-- Modal Body -->
+        <div class="modal-body">
+            <div class="col-md-6 col-md-offset-3">
+                <form id="login" action="" method="post">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <fieldset>
+                                <input name="email" type="email" class="form-control" id="user_email" placeholder="Your email..." required="">
+                            </fieldset>
+                        </div>
+                        <div class="col-md-12">
+                            <fieldset>
+                                <input name="password" type="password" class="form-control" id="user_password" placeholder="Your Password..." required="">
+                            </fieldset>
+                        </div>
+                        <div class="col-md-12">
+                            <fieldset>
+                                <button type="submit" id="login-submit" class="btn">Login</button>
+                            </fieldset>
+                        </div>
+                    </div>
+                </form>
+                <p>Don't have an account? <button id="sign-up-btn" class="btn">sign-up</button></p>
             </div>
         </div>
     </div>
-</section>
+</div>
 
+<div id="sign-up-modal" class="modal">
+    <!-- Modal Content -->
+    <div class="modal-content">
+        <!-- Modal Header -->
+        <div class="modal-header">
+            <h3 class="header-title"><em>Sign Up</em></h3>
+            <div class="close-btn"><img src="img/close_contact.png" alt=""></div>
+        </div>
+        <!-- Modal Body -->
+        <div class="modal-body">
+            <div class="col-md-6 col-md-offset-3">
+                <form id="sign-up-form" action="" method="post">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <fieldset>
+                                <input name="full-name" type="email" class="form-control" id="full-name" placeholder="Your Full Name..." required="">
+                            </fieldset>
+                        </div>
+                        <div class="col-md-12">
+                            <fieldset>
+                                <input name="email" type="email" class="form-control" id="sign-up-email" placeholder="Your email..." required="">
+                            </fieldset>
+                        </div>
+                        <div class="col-md-12">
+                            <fieldset>
+                                <input name="password" type="email" class="form-control" id="sign-up-password" placeholder="Your Password..." required="">
+                            </fieldset>
+                        </div>
+                        <div class="col-md-12">
+                            <fieldset>
+                                <input name="repeat-password" type="password" class="form-control" id="repeat-password" placeholder="Repeat Password..." required="">
+                            </fieldset>
+                        </div>
+                        <div class="col-md-12">
+                            <fieldset>
+                                <button type="submit" id="sign-up-submit" class="btn">Sign Up</button>
+                            </fieldset>
+                        </div>
+                    </div>
+                </form>
+                <p>Already have an account? <button id="sign-up-login-btn" class="btn">Login</button></p>
+            </div>
+        </div>
+    </div>
+</div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 
