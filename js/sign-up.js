@@ -12,7 +12,7 @@ jQuery(document).ready(function($) {
             var good_color = "#66cc66";
             var bad_color  = "#ff6666";
 
-            if(password.val() == confirm.val()){
+            if(password.val() === confirm.val()){
                 confirm.css('background-color', good_color);
                 message.css('color', good_color).html("Passwords Match!");
             } else {
@@ -23,31 +23,39 @@ jQuery(document).ready(function($) {
     });
 
     $(function() {
-        var userName = $('#full-name').val(),
-            userEmail = $('#sign-up-email').val(),
-            userPassword = $('#sign-up-password').val(),
-            repeatPassword = $('#repeat-password').val(),
-            signUpBtn = $('#sign-up-submit');
+        var signUpBtn = $('#sign-up-submit');
 
-        signUpBtn.on('click', function() {
+        signUpBtn.on('click', function(event) {
+            var userName = $('#full-name').val();
+            var userEmail = $('#sign-up-email').val();
+            var userPassword = $('#sign-up-password').val();
+            var repeatPassword = $('#repeat-password').val();
+
             var data = {}
             data["full_names"] = userName;
             data["email"] = userEmail;
             data["password"] = userPassword;
-            data["email"] = $("#register_skype").val();
-            data["password"] = $("#register_password").val();
 
+
+            event.preventDefault();
             $.ajax({
                 type: "POST",
                 contentType: "application/json",
-                url: "http://ddcbe2b35bb0.ngrok.io/auth/register",
+                url: "https://cors-anywhere.herokuapp.com/https://ddcbe2b35bb0.ngrok.io/auth/register",
                 data: JSON.stringify(data),
                 dataType: 'json',
-                timeout: 600000,
+                timeout: 6000000,
                 success: function (result) {
-                    console.log("DONE");
-                    alert("Data: " + result);
-                    window.location.href = "main.html";
+                    console.log(result);
+                    console.log(result['message']);
+                    var status = result['status'];
+                    if(status === "success"){
+                        window.location.href = "main.html";
+                    }
+                    else{
+                        alert(result['message']);
+                    }
+
                 },
                 error: function (e) {
                     console.log("ERROR: ", e);
