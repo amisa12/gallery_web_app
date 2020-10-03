@@ -370,6 +370,12 @@ footer a:hover {
   letter-spacing: 0.5px;
  }
 
+
+/*.grid-portfolio .portfolio-item button {*/
+/*  transform: translateY(30px);*/
+/*  transition: .5s ease-in-out;*/
+/*}*/
+
  .grid-portfolio .portfolio-item em {
   font-style: normal;
   font-weight: 200;
@@ -378,6 +384,18 @@ footer a:hover {
 .grid-portfolio .portfolio-item:hover h1 {
   transform: translateY(0);
  }
+
+.grid-portfolio .portfolio-item button {
+  padding-left: 20px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: .5s ease-in-out;
+}
+
+.grid-portfolio .portfolio-item:hover  button{
+  opacity: 1;
+  transform: translateY(0);
+}
 
 .grid-portfolio .portfolio-item p {
   padding-left: 20px;
