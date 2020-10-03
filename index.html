@@ -18,6 +18,7 @@
     <link href="https://fonts.googleapis.com/css?family=Kanit:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 </head>
 
 <body>
@@ -39,8 +40,8 @@
                 <div class="portfolio-item">
                     <a href="img/big_portfolio_item_4.png" data-lightbox="image-1"><div class="thumb">
                         <div class="hover-effect">
+<!--                            <button id="like-btn" class="like-btn">Button</button>-->
                             <div class="hover-content">
-<!--                                <button id="like-btn" class="like-btn"><img src="img/wishlist.png">Button</button>-->
                                 <h1>Biodiesel <em>squid</em></h1>
                                 <p>Awesome Subtittle Goes Here</p>
                             </div>
@@ -293,7 +294,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <fieldset>
-                                <input name="full-name" type="email" class="form-control" id="full-name" placeholder="Your Full Name..." required="">
+                                <input name="full-name" type="text" class="form-control" id="full-name" placeholder="Your Full Name..." required="">
                             </fieldset>
                         </div>
                         <div class="col-md-12">
@@ -303,7 +304,7 @@
                         </div>
                         <div class="col-md-12">
                             <fieldset>
-                                <input name="password" type="email" class="form-control" id="sign-up-password" placeholder="Your Password..." required="">
+                                <input name="password" type="password" class="form-control" id="sign-up-password" placeholder="Your Password..." required="">
                             </fieldset>
                         </div>
                         <div class="col-md-12">
@@ -311,6 +312,7 @@
                                 <input name="repeat-password" type="password" class="form-control" id="repeat-password" placeholder="Repeat Password..." required="">
                             </fieldset>
                         </div>
+                        <span id="confirm-message" class="confirm-message"></span>
                         <div class="col-md-12">
                             <fieldset>
                                 <button type="submit" id="sign-up-submit" class="btn">Sign Up</button>
@@ -330,6 +332,7 @@
 
 <script src="js/plugins.js"></script>
 <script src="js/main.js"></script>
+<script src="js/sign-up.js"></script>
 
 </body>
 </html>

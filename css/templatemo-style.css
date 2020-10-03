@@ -111,6 +111,12 @@ nav .nav-right button{
   margin-top: 2px;
 }
 
+.confirm-message{
+  margin: 0;
+  padding: 0;
+  font-size: .8em;
+}
+
 .login-btn{
   position: absolute;
 }
