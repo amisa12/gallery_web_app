@@ -29,7 +29,12 @@ jQuery(document).ready(function($) {
             var userName = $('#full-name').val();
             var userEmail = $('#sign-up-email').val();
             var userPassword = $('#sign-up-password').val();
-            var repeatPassword = $('#repeat-password').val();
+            var loginModal = $('#login-modal'),
+                loginClose = loginModal.find('.close-btn img'),
+                loginModContent = loginModal.find('.modal-content'),
+                signUpModal = $('#sign-up-modal'),
+                signUpClose = signUpModal.find('.close-btn img'),
+                signUpModCOntent = signUpModal.find('.modal-content');
 
             var data = {}
             data["full_names"] = userName;
@@ -41,16 +46,18 @@ jQuery(document).ready(function($) {
             $.ajax({
                 type: "POST",
                 contentType: "application/json",
-                url: "https://cors-anywhere.herokuapp.com/https://ddcbe2b35bb0.ngrok.io/auth/register",
+                url: "https://cors-anywhere.herokuapp.com/https://bb94e7331667.ngrok.io/auth/register",
                 data: JSON.stringify(data),
                 dataType: 'json',
-                timeout: 6000000,
+                timeout: 8000000,
                 success: function (result) {
-                    console.log(result);
-                    console.log(result['message']);
                     var status = result['status'];
                     if(status === "success"){
-                        window.location.href = "main.html";
+                        localStorage.setItem('token', result['auth_token'])
+                        signUpModCOntent.removeClass('modal-animated-out').addClass('modal-animated-in');
+                        loginModal.css('display', 'block');
+                        loginModContent.removeClass('modal-animated-out').addClass('modal-animated-in');
+                        signUpModal.css('display', 'none');
                     }
                     else{
                         alert(result['message']);
