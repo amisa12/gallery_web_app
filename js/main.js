@@ -9,7 +9,7 @@ jQuery(document).ready(function($) {
               modal   = $('#modal'),
               close   = modal.find('.close-btn img'),
               modContent = modal.find('.modal-content'),
-              likeBtn = $('#like-btn'),
+              likeBtn = $('.like-btn'),
               loginBtn = $('#login-btn'),
               loginModal = $('#login-modal'),
               loginClose = loginModal.find('.close-btn img'),
