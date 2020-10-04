@@ -128,6 +128,11 @@ nav .nav-right button{
 .login-btn{
   position: absolute;
 }
+
+.main-like-btn:active{
+  background: red;
+}
+
 .popup-icon {
   position: fixed;
   bottom: 30px;
@@ -378,12 +383,6 @@ footer a:hover {
   letter-spacing: 0.5px;
  }
 
-
-/*.grid-portfolio .portfolio-item button {*/
-/*  transform: translateY(30px);*/
-/*  transition: .5s ease-in-out;*/
-/*}*/
-
  .grid-portfolio .portfolio-item em {
   font-style: normal;
   font-weight: 200;
@@ -393,18 +392,30 @@ footer a:hover {
   transform: translateY(0);
  }
 
-.grid-portfolio .portfolio-item button {
+.grid-portfolio .portfolio-item i {
   float: right;
   position: relative;
   display: inline-block;
   opacity: 0;
+  font-size: 2rem;
   transform: translateY(100px);
   transition: .5s ease-in-out;
+  color: #f7f7f7;
+
 }
 
-.grid-portfolio .portfolio-item:hover  button{
+.grid-portfolio .portfolio-item:hover  i{
   opacity: 1;
-  transform: translateY(-320px);
+  transform: translateY(30px);
+  transition: .4s;
+}
+.grid-portfolio .portfolio-item:hover  i:hover{
+  color: #f50057;
+
+}
+.grid-portfolio .portfolio-item .fas{
+  color: #f50057;
+  transition: .4s;
 }
 
 .grid-portfolio .portfolio-item p {
