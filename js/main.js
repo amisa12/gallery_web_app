@@ -9,7 +9,6 @@ jQuery(document).ready(function($) {
               modal   = $('#modal'),
               close   = modal.find('.close-btn img'),
               modContent = modal.find('.modal-content'),
-              likeBtn = $('.like-btn'),
               mainLikeBtn = $('.main-like-btn'),
               loginBtn = $('#login-btn'),
               loginModal = $('#login-modal'),
@@ -28,7 +27,7 @@ jQuery(document).ready(function($) {
           });
 
           // open login modal when click on open modal button
-          likeBtn.on('click', function() {
+          $('.far').on('click', function (){
             loginModal.css('display', 'block');
             loginModContent.removeClass('modal-animated-out').addClass('modal-animated-in');
           });
