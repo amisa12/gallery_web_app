@@ -49,7 +49,7 @@ jQuery(document).ready(function($) {
                 $.ajax({
                     type: "POST",
                     contentType: "application/json",
-                    url: "https://cors-anywhere.herokuapp.com/https://2112c89ccd2b.ngrok.io/items/user-item/add",
+                    url: "https://cors-anywhere.herokuapp.com/https://ancient-bastion-94304.herokuapp.com/items/user-item/add",
                     data: JSON.stringify(data),
                     dataType: 'json',
                     timeout: 8000000,
@@ -71,7 +71,7 @@ jQuery(document).ready(function($) {
                 $.ajax({
                     type: "DELETE",
                     contentType: "application/json",
-                    url: "https://cors-anywhere.herokuapp.com/https://2112c89ccd2b.ngrok.io/items/user-item/remove",
+                    url: "https://cors-anywhere.herokuapp.com/https://ancient-bastion-94304.herokuapp.com/items/user-item/remove",
                     data: JSON.stringify(data),
                     dataType: 'json',
                     timeout: 8000000,

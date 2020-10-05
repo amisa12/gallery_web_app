@@ -9,7 +9,7 @@ jQuery(document).ready(function($) {
         logoutBtn.on('click', function (){
             $.ajax({
                 type: "GET",
-                url: "https://cors-anywhere.herokuapp.com/https://2112c89ccd2b.ngrok.io/auth/logout",
+                url: "https://cors-anywhere.herokuapp.com/https://ancient-bastion-94304.herokuapp.com/auth/logout",
                 timeout: 800000,
                 beforeSend: function (xhr) {
                     xhr.setRequestHeader('Authorization', 'Bearer ' + token);

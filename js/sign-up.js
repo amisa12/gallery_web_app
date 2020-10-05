@@ -51,7 +51,7 @@ jQuery(document).ready(function($) {
                 $.ajax({
                     type: "POST",
                     contentType: "application/json",
-                    url: "https://cors-anywhere.herokuapp.com/https://2112c89ccd2b.ngrok.io/auth/register",
+                    url: "https://cors-anywhere.herokuapp.com/https://ancient-bastion-94304.herokuapp.com/auth/register",
                     data: JSON.stringify(data),
                     dataType: 'json',
                     timeout: 8000000,

@@ -17,7 +17,7 @@ jQuery(document).ready(function($) {
             $.ajax({
                 type: "POST",
                 contentType: "application/json",
-                url: "https://cors-anywhere.herokuapp.com/https://2112c89ccd2b.ngrok.io/auth/login",
+                url: "https://cors-anywhere.herokuapp.com/https://ancient-bastion-94304.herokuapp.com/auth/login",
                 data: JSON.stringify(data),
                 dataType: 'json',
                 timeout: 600000,
