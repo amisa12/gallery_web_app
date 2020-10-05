@@ -43,33 +43,37 @@ jQuery(document).ready(function($) {
             data["email"] = userEmail;
             data["password"] = userPassword;
 
+            if(userPassword.length < 6){
+                window.location.href = "index.html";
+            }
+            else{
+                event.preventDefault();
+                $.ajax({
+                    type: "POST",
+                    contentType: "application/json",
+                    url: "https://cors-anywhere.herokuapp.com/https://2112c89ccd2b.ngrok.io/auth/register",
+                    data: JSON.stringify(data),
+                    dataType: 'json',
+                    timeout: 8000000,
+                    success: function (result) {
+                        var status = result['status'];
+                        if(status === "success"){
+                            signUpModCOntent.removeClass('modal-animated-out').addClass('modal-animated-in');
+                            loginModal.css('display', 'block');
+                            loginModContent.removeClass('modal-animated-out').addClass('modal-animated-in');
+                            signUpModal.css('display', 'none');
+                        }
+                        else{
+                            alert(result['message']);
+                        }
 
-            event.preventDefault();
-            $.ajax({
-                type: "POST",
-                contentType: "application/json",
-                url: "https://cors-anywhere.herokuapp.com/https://2112c89ccd2b.ngrok.io/auth/register",
-                data: JSON.stringify(data),
-                dataType: 'json',
-                timeout: 8000000,
-                success: function (result) {
-                    var status = result['status'];
-                    if(status === "success"){
-                        signUpModCOntent.removeClass('modal-animated-out').addClass('modal-animated-in');
-                        loginModal.css('display', 'block');
-                        loginModContent.removeClass('modal-animated-out').addClass('modal-animated-in');
-                        signUpModal.css('display', 'none');
+                    },
+                    error: function (e) {
+                        console.log("ERROR: ", e);
+                        display(e);
                     }
-                    else{
-                        alert(result['message']);
-                    }
-
-                },
-                error: function (e) {
-                    console.log("ERROR: ", e);
-                    display(e);
-                }
-            });
+                });
+            }
         });
 
 
